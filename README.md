@@ -112,5 +112,3 @@ Future enhancements could include:
 4. SimPy Documentation. *The Bank Tutorial – Modeling a Bank Queuing System Using Python SimPy.* [Read tutorial](https://pythonhosted.org/SimPy/Tutorials/TheBank.html)
 
 ---
-
-*An academic project demonstrating how simulation can help analyze bank queues, evaluate teller allocation, and understand customer waiting times.*
