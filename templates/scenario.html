@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manager Scenario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #F8F9FA; /* soft white */
+            color: #333333; /* charcoal */
+            text-align: center;
+        }
+        /* Header */
+        header {
+            background-color: #003366; /* dark navy */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        marquee {
+            background: #4A90E2; /* sky blue */
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        /* Form */
+        form {
+            margin: 30px auto;
+            display: block;
+            width: 480px; /* wider form box */
+            text-align: left;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        label {
+            display: inline-block;
+            width: 140px; /* wider labels */
+            font-weight: bold;
+            color: #003366; /* navy */
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 250px;
+        }
+        button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 12px 25px;
+            background: #003366; /* navy */
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #4A90E2; /* sky blue */
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            background: #6c757d;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        a:hover {
+            background: #5a6268;
+        }
+        h2 {
+            margin-top: 35px;
+            color: #2E7D32; /* emerald green */
+        }
+        p b {
+            color: #D4AF37; /* gold highlights */
+        }
+        /* Intro text */
+        .intro-text {
+            max-width: 700px;
+            margin: 15px auto 25px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Bank Queue Simulation</h1>
+    </header>
+    <marquee behavior="scroll" direction="left">IMODSIM Project</marquee>
+
+    <!-- Page Title -->
+    <h1 style="margin-top: 20px;">Manager Scenario</h1>
+
+    <!-- Intro Text -->
+    <div class="intro-text">
+        Our simulation uses historical data of 30 days to evaluate how employees perform when different numbers of customers and tellers are available. 
+        It also provides a day-to-day performance view. After the bank closes, managers can input the number of tellers available and the total customers served that day.
+    </div>
+
+    <!-- Form -->
+    <form method="POST">
+        <label>Tellers:</label>
+        <input type="number" name="tellers" required><br>
+
+        <label>Customers:</label>
+        <input type="number" name="customers" required><br>
+
+        <button type="submit">Run Simulation</button>
+    </form>
+
+    {% if result %}
+    <h2>Results for Today</h2>
+    <p>Tellers: <b>{{ result.tellers }}</b></p>
+    <p>Customers: <b>{{ result.customers }}</b></p>
+    <p>Average Wait Time: <b>{{ result.avg_wait }}</b></p>
+    <p>Max Wait Time: <b>{{ result.max_wait }}</b></p>
+    {% endif %}
+
+    <!-- Back Button -->
+    <div style="margin-top: 10px;">
+        <a href="/">Back to Results</a>
+    </div>
+</body>
+</html>
